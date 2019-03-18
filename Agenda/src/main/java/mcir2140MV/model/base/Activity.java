@@ -9,7 +9,8 @@ import mcir2140MV.model.repository.interfaces.RepositoryContact;
 public class Activity {
     private String name;
     private Date start;
-    private Date duration;
+    private Date end;
+    //todo OLD:	 private Date duration;
     private List<Contact> contacts;
     private String description;
 
@@ -24,8 +25,8 @@ public class Activity {
 
         this.start = new Date();
         this.start.setTime(start.getTime());
-        this.duration = new Date();
-        this.duration.setTime(end.getTime());
+        this.end = new Date();
+        this.end.setTime(end.getTime());
     }
 
     public String getName() {
@@ -40,12 +41,12 @@ public class Activity {
         this.start = start;
     }
 
-    public Date getDuration() {
-        return duration;
+    public Date getEnd() {
+        return end;
     }
 
-    public void setDuration(Date duration) {
-        this.duration = duration;
+    public void setEnd(Date end) {
+        this.end = end;
     }
 
     public List<Contact> getContacts() {
@@ -70,14 +71,14 @@ public class Activity {
             return false;
         Activity act = (Activity) obj;
         if (act.description.equals(description) && start.equals(act.start)
-                && duration.equals(act.duration) && name.equals(act.name))
+                && end.equals(act.end) && name.equals(act.name))
             return true;
         return false;
     }
 
     public boolean intersect(Activity act) {
-        if (start.compareTo(act.duration) < 0
-                && act.start.compareTo(duration) < 0)
+        if (start.compareTo(act.end) < 0
+                && act.start.compareTo(end) < 0)
             return true;
         return false;
     }
@@ -89,7 +90,7 @@ public class Activity {
         sb.append("#");
         sb.append(start.getTime());
         sb.append("#");
-        sb.append(duration.getTime());
+        sb.append(end.getTime());
         sb.append("#");
         sb.append(description);
         sb.append("#");

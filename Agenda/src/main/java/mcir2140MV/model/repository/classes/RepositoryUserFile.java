@@ -15,7 +15,8 @@ import mcir2140MV.model.repository.interfaces.RepositoryUser;
 public class RepositoryUserFile implements RepositoryUser{
 
     private List<User> users;
-    private static final String filename = "bin\\files\\users.txt";
+//    private static final String filename = "bin\\files\\users.txt";
+    private static final String filename = "files\\users.txt";
 
     public RepositoryUserFile() throws Exception
     {
