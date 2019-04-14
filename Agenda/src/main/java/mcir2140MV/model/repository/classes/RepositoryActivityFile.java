@@ -1,11 +1,6 @@
 package mcir2140MV.model.repository.classes;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,7 +23,7 @@ public class RepositoryActivityFile implements RepositoryActivity {
         //DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(filename)));
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("/home/catalin/Facultate/Sem2/VVSS/Lab1/Agenda/src/main/java/files/activities.txt"))));
             String line;
             int i = 0;
             while ((line = br.readLine()) != null) {
