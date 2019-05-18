@@ -29,8 +29,8 @@ public class AddActivityTest {
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
         try {
             act = new Activity("name1",
-                    df.parse("03/20/2013 12:00"),
-                    df.parse("03/20/2013 13:00"),
+                    df.parse("24/02/2019 12:00"),
+                    df.parse("24/02/2019 12:00"),
                     null,
                     "Lunch break");
             rep.addActivity(act);
@@ -154,5 +154,97 @@ public class AddActivityTest {
         assertTrue( 1 == rep.count());
         for (Activity a : rep.getActivities())
             rep.removeActivity(a);
+    }
+
+    @Test
+    public void testCase6()
+    {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        try {
+            act = new Activity("name1",
+                    df.parse("24/02/2019 12:00"),
+                    df.parse("24/02/2019 12:00"),
+                    null,
+                    "Lunch break");
+            rep.addActivity(act);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        assertTrue(1 == rep.count());
+    }
+
+    @Test
+    public void testCase7()
+    {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        try {
+            act = new Activity("name1",
+                    df.parse("24/02/2019 12:00"),
+                    df.parse("24/02/2019 12:00"),
+                    null,
+                    "Lunch break");
+            rep.addActivity(act);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        assertTrue(1 == rep.count());
+    }
+
+    @Test
+    public void testCase8()
+    {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        try {
+            act = new Activity("name1",
+                    df.parse("15/02/2019 12:00"),
+                    df.parse("16/02/2019 12:00"),
+                    null,
+                    "Lunch break");
+            rep.addActivity(act);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        assertTrue(1 == rep.count());
+    }
+
+    @Test
+    public void testCase9()
+    {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        try {
+            act = new Activity("name1",
+                    df.parse("20/02/2019 12:00"),
+                    df.parse("21/02/2019 12:00"),
+                    null,
+                    "Lunch break");
+            rep.addActivity(act);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        assertTrue(1 == rep.count());
+    }
+
+    @Test
+    public void testCase10()
+    {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        try {
+            act = new Activity("name1",
+                    df.parse("19/02/2019 12:00"),
+                    df.parse("21/02/2019 12:00"),
+                    null,
+                    "Lunch break");
+            rep.addActivity(act);
+
+            act = new Activity("name1",
+                    df.parse("20/02/2019 10:00"),
+                    df.parse("20/02/2019 12:00"),
+                    null,
+                    "Lunch break");
+            rep.addActivity(act);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        assertTrue(1 == rep.count());
     }
 }
